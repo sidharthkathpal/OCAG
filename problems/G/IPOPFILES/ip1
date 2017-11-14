@@ -1,0 +1,45 @@
+import CFGcount
+import nltk
+from nltk.parse.generate import generate, demo_grammar
+from nltk import CFG
+
+length1 = len(CFGcount.grammar.productions())
+ar = [0 for i in range(0,length1)]
+
+i = 0
+ar_string = ['']*5
+for sentence in generate(CFGcount.grammar, n=5):
+	ar_string[i] = sentence
+	CFGcount.counting(sentence)
+	for j in range(0, length1):
+		ar[j] = ar[j] + CFGcount.a[j]
+	i = i + 1
+
+sum = 0
+print('The Final Count: \n')
+for i in range(0,length1):
+	print(CFGcount.grammar.productions()[i],"\t",ar[i]) 
+	sum = sum + ar[i]
+print('\nThe probility of each rule over a set of 5 sentences: \n')
+for i in range(0,length1):
+	print(CFGcount.grammar.productions()[i],"\t",round(ar[i]/sum,3)) 
+	
+'''grammar = CFG.fromstring("""
+S -> NP VP
+PP -> P NP
+NP -> Det N | Det N PP | 'I'
+VP -> V NP | VP PP
+Det -> 'an' | 'my'
+N -> 'elephant' | 'pj'
+V -> 'shot'
+P -> 'in'
+""")
+#print(grammar)'''
+
+	#print('\n\n')
+	
+#ar_string[0] = ['I', 'shot', 'an', 'elephant', 'in', 'my', 'pj']
+#CFGcount.counting(ar_string[0], grammar)
+#print(ar_string)
+
+#print(ar)
