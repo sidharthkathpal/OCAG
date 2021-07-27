@@ -6,16 +6,18 @@ Copy the ocag folder into /opt/lampp/htdocs/ folder
 
 Open Terminal and Type the following commands to open the XAMPP manager GUI in sequence as it is
 
-  cd /opt/lampp/
-  sudo ./manager-linux-x64.run
+	cd /opt/lampp/
+	sudo ./manager-linux-x64.run
+
 Now Start your Apache and MySQL Servers.
 
 Open a new Terminal instance and type the following commands to sequence as it is
 
-  cd /opt/lampp/
-  sudo chmod -R 777 htdocs
-  cd htdocs
-  sudo chmod -R 777 ocag
+	cd /opt/lampp/
+	sudo chmod -R 777 htdocs
+	cd htdocs
+	sudo chmod -R 777 ocag
+
 Open the Web Browser and type localhost/ocag
 
 Login with the following credential initially
