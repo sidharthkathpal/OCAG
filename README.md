@@ -1,1 +1,1 @@
-# ocag1
+# OCAG: Online Code and Assignment Grader
